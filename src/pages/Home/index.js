@@ -14,7 +14,7 @@ const PageHome = () => {
   };
 
   useEffect(() => {
-    getApiFake();
+    // getApiFake();
   }, []);
 
   return (
