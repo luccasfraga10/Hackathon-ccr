@@ -18,8 +18,12 @@ defaultTheme.overrides = {
   MuiButton: {
     root: {
       textTransform: 'initial',
-      borderRadius: 0,
+      borderRadius: 8,
     },
+    outlined: {
+      borderColor: colors.white,
+      color: colors.white,
+    }
   },
   MuiTypography: {
     h1: {
@@ -62,7 +66,7 @@ defaultTheme.overrides = {
     subtitle2: {
       fontFamily,
       fontSize: 18,
-    }
+    },
   }
 };
 

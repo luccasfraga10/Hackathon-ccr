@@ -57,10 +57,15 @@ export default makeStyles(theme => ({
     fontFamily: theme.typography.fontFamily,
     letterSpacing: '1.1px',
     display: 'flex',
+    background: 'none',
+    border: 0
   },
   createTripIcon: {
     fontSize: 14,
     marginLeft: 8
+  },
+  closeIcon: {
+    color: colors.white
   }
 }))
 
