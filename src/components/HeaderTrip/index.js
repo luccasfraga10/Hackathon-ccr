@@ -7,6 +7,7 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import useStyles from './styles'
 import SelectRoute from '../SelectRoute';
+import DateRoute from '../DateRoute';
 
 const HeaderTripProgress = () => {
   const classes = useStyles();
@@ -29,7 +30,7 @@ const HeaderTripProgress = () => {
     },
     {
       id: 1,
-      component: <h1>a</h1>
+      component: <DateRoute />
     },
   ]
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Grid, Paper, Typography, Avatar, SvgIcon } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
 import useStyles from './styles'
 import { MetersToKm, TimeToMin } from '../../utils';
 import iconTrip from '../../assets/icons/trip-distance.svg';
