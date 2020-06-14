@@ -24,18 +24,23 @@ export default makeStyles(theme => ({
   mapIcon: {
     position: 'absolute',
     right: theme.spacing(4),
-    top: 58
+    top: 58,
+  },
+  menuArea: {
+    paddingBottom: 180,
   },
   bottomInfo: {
     background: colors.primary,
     padding: theme.spacing(5, 4),
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
-    left: 0,
     width: '100%',
     color: colors.white,
     borderTopLeftRadius: theme.shape.borderRadius * 6,
     borderTopRightRadius: theme.shape.borderRadius * 6,
+    maxWidth: 375,
+    transform: 'translateX(-50%)',
+    left: '50%',
   },
   bottomInfoDescription: {
     opacity: .7,

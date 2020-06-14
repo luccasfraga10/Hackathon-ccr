@@ -44,7 +44,7 @@ const PageHome = () => {
         <Typography className={classes.fullName}>Marcos Felipe</Typography>
         <Avatar className={classes.avatar}>MF</Avatar>
       </Box>
-      <Grid container spacing={2}>
+      <Grid container className={classes.menuArea} spacing={2}>
         {
           menu.map(({label, icon, path}, index) => {
             return (
