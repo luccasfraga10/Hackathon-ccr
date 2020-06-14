@@ -7,7 +7,7 @@ const PageHome = () => {
   const getApiFake = async () => {
     const response = await api.get('test');
 
-    console.log(response);
+    // console.log(response);
   };
 
   useEffect(() => {

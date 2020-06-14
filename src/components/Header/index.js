@@ -1,5 +1,15 @@
 import React from 'react';
 
-const Header = () => <h1>Header</h1>;
+import SearchBar from '../SearchBar';
+import CalculateDistance from '../CalculateDistance';
+
+const Header = () => (
+  <div>
+    <SearchBar />
+    <SearchBar />
+
+    <CalculateDistance />
+  </div>
+);
 
 export default Header;
