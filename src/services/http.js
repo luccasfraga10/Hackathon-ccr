@@ -24,4 +24,4 @@ const createHttp = () => {
   return axiosInstance;
 };
 
-export default createHttp;
+export default createHttp();
