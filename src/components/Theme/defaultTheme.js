@@ -21,6 +21,10 @@ defaultTheme.overrides = {
       borderRadius: 8,
     },
     outlined: {
+      borderColor: colors.black,
+      color: colors.black,
+    },
+    outlinedPrimary: {
       borderColor: colors.white,
       color: colors.white,
     }
