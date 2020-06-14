@@ -1,19 +1,21 @@
 import { Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import React from 'react';
+import { Box } from '@material-ui/core';
 import Routes from './routes';
-import GlobalStyle from './styles/global';
+// import GlobalStyle from './styles/global';
 import history from './services/history';
 import Theme from './components/Theme';
 
 function App() {
   return (
     <Theme>
-      <Router history={history}>
-        <Routes />
-        <GlobalStyle />
-        <ToastContainer autoClose={3000} />
-      </Router>
+      <Box maxWidth="450px" m="0 auto">
+        <Router history={history}>
+          <Routes />
+          <ToastContainer autoClose={3000} />
+        </Router>
+      </Box>
     </Theme>
   );
 }
