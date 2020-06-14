@@ -1,9 +1,10 @@
+/* eslint-disable */
 import React from 'react';
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
-import { classnames } from '../helpers';
+import { classnames } from './helpers';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -36,6 +37,18 @@ class SearchBar extends React.Component {
           longitude: lng,
           isGeocoding: false,
         });
+
+        const newArray = [
+          ...this.props.valueDistance,
+          {
+            id: this.props.id,
+            latitude: lat,
+            longitude: lng,
+            isGeocoding: false,
+          },
+        ];
+
+        this.props.setDistance(newArray);
       })
       .catch(error => {
         this.setState({ isGeocoding: false });
@@ -49,6 +62,13 @@ class SearchBar extends React.Component {
       latitude: null,
       longitude: null,
     });
+
+    const newArray = [
+      this.props.valueDistance &&
+        this.props.valueDistance.find(item => item.id !== this.props.id),
+    ];
+
+    this.props.setDistance(newArray);
   };
 
   handleError = (status, clearSuggestions) => {
@@ -82,7 +102,7 @@ class SearchBar extends React.Component {
                 <div className="Demo__search-input-container">
                   <input
                     {...getInputProps({
-                      placeholder: 'Search Places...',
+                      placeholder: 'Digite o endereço',
                       className: 'Demo__search-input',
                     })}
                   />
@@ -125,28 +145,6 @@ class SearchBar extends React.Component {
         </PlacesAutocomplete>
         {errorMessage.length > 0 && (
           <div className="Demo__error-message">{this.state.errorMessage}</div>
-        )}
-
-        {((latitude && longitude) || isGeocoding) && (
-          <div>
-            <h3 className="Demo__geocode-result-header">Geocode result</h3>
-            {isGeocoding ? (
-              <div>
-                <i className="fa fa-spinner fa-pulse fa-3x fa-fw Demo__spinner" />
-              </div>
-            ) : (
-              <div>
-                <div className="Demo__geocode-result-item--lat">
-                  <label>Latitude:</label>
-                  <span>{latitude}</span>
-                </div>
-                <div className="Demo__geocode-result-item--lng">
-                  <label>Longitude:</label>
-                  <span>{longitude}</span>
-                </div>
-              </div>
-            )}
-          </div>
         )}
       </div>
     );
