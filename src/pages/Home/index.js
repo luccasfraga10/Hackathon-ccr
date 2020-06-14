@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect } from 'react';
 import Header from '../../components/Header';
 
@@ -5,8 +6,7 @@ import api from '../../services/api';
 
 const PageHome = () => {
   const getApiFake = async () => {
-    const response = await api.get('test');
-
+    // const response = await api.get('test');
     // console.log(response);
   };
 

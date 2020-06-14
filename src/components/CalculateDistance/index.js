@@ -1,18 +1,22 @@
 import React, { useEffect } from 'react';
 
-import AxiosHttp from '../../services/http';
+import api from '../../services/test';
 
 const CalculateDistance = () => {
-  const getApi = async () => {
-    const response = await AxiosHttp.get(
-      '/distancematrix/json?units=imperial&origins=-23.4814376,-46.7458937&destinations=-23.5353856,-46.8979554&key=AIzaSyCjqDVWvcWUMDNNEf9FZohN4cfk1ZHtTIY'
-    );
+  const rola = async () => {
+    const init = { lat: -23.4814376, long: -46.7458937 };
+    const end = { lat: -23.5353856, long: -46.8979554 };
 
-    console.log(response);
+    await api.getDistances(init, end);
+    try {
+      console.log('Deu bom');
+    } catch (err) {
+      console.log('erro =>', err);
+    }
   };
 
   useEffect(() => {
-    getApi();
+    rola();
   }, []);
 
   return (
