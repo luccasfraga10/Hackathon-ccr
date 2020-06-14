@@ -7,6 +7,7 @@ import { MetersToKm, TimeToMin } from '../../utils';
 import iconTrip from '../../assets/icons/trip-distance.svg';
 import iconAverage from '../../assets/icons/average.svg';
 import iconFuel from '../../assets/icons/fuel.svg';
+import iconS from '../../assets/icons/iconS.svg';
 
 import getApiDistance from '../../services/distance';
 
@@ -52,6 +53,19 @@ const CalculateDistance = ({ coordinates }) => {
       <Typography component="b" className={classes.title}>Informações sobre a rota</Typography>
 
       <ul className={classes.list}>
+
+        <li className={classes.itemList}>
+          <Typography component="b" className={classes.itemListTitle}>
+            <img src={iconS} alt="Saúde durante a rota" className={classes.iconTitle}/>
+            Saúde durante a rota
+          </Typography>
+          <div className={classes.itemListContent}>
+            <Typography component="span" className={classes.itemListContentText}>Parada para alongamento</Typography>
+            <Typography component="span" className={classes.itemListContentText}>Parada para descansar</Typography>
+          </div>
+        </li>
+
+
         <li className={classes.itemList}>
           <Typography component="b" className={classes.itemListTitle}>
             <img src={iconTrip} alt="Trajeto" className={classes.iconTitle}/>

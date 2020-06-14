@@ -16,6 +16,9 @@ export default makeStyles(theme => ({
   },
   list: {
     listStyle: 'none',
+    overflow: 'scroll',
+    height: '100%',
+    paddingBottom: '400px'
   },
   itemList: {
     marginBottom: theme.spacing(3)
