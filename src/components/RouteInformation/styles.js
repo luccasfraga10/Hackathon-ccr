@@ -23,7 +23,8 @@ export default makeStyles(theme => ({
   itemListTitle: {
     fontSize: '14px',
     display: 'block',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: theme.spacing(1)
   },
   itemListContent: {
     display: 'flex',
