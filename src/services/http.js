@@ -4,9 +4,9 @@ const ERROR_TIMEOUT =
   'Infelizmente estamos com problemas de conexão, tente novamente mais tarde.';
 
 const createHttp = () => {
-  const env = process.env.NODE_ENV;
-  const baseURL =
-    env === 'development' ? '/api' : process.env.REACT_APP_MAP_URL;
+  // const env = process.env.NODE_ENV;
+  const baseURL = 'api';
+  // env === 'development' ? '/api' : process.env.REACT_APP_MAP_URL;
 
   const axiosInstance = axios.create({ baseURL });
 
