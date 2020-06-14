@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MetersToKm, TimeToMin } from '../../utils';
 
 import getApiDistance from '../../services/distance';
 
@@ -41,10 +42,11 @@ const CalculateDistance = ({ coordinates }) => {
   return (
     <div>
       <p>
-        Distância:<b>{distance.distances}</b>
+        Distância:
+        <b>{distance.distances && MetersToKm(distance.distances)} Km</b>
       </p>
       <p>
-        Tempo:<b>{distance.durations}</b>
+        Tempo:<b>{distance.durations && TimeToMin(distance.durations)} Min</b>
       </p>
     </div>
   );
