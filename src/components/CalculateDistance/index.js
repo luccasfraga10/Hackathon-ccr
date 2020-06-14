@@ -16,7 +16,7 @@ const CalculateDistance = () => {
   };
 
   useEffect(() => {
-    rola();
+    // rola();
   }, []);
 
   return (
