@@ -1,6 +1,6 @@
 ## Hackathon CCR 2020
 
-Esse projeto tem objetivo...
+Gerar ideias voltadas para a rotina dos caminhoneiros, encontrando soluções para melhorar a qualidade de vida nas estradas, principalmente quanto à saúde física e mental desses profissionais.
 
 
 ## URL do projeto:
