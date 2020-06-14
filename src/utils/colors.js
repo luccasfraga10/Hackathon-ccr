@@ -4,6 +4,7 @@ const colors = {
   white: '#ffffff',
   black: '#272727',
   grayLight: '#A4A4A4',
+  grayMedium: '#A7A7A7',
   success: '50C270',
 };
 

@@ -68,6 +68,3 @@ export default makeStyles(theme => ({
     color: colors.white
   }
 }))
-
-//Se quiser saber o q é o theme (parametro na linha 4): https://material-ui.com/customization/default-theme/
-
