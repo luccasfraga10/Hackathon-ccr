@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const ApiMap = axios.create({
-  baseURL: process.env.REACT_APP_MAP_URL,
+  baseURL: 'https://distance-calculator.p.rapidapi.com/v1/',
 });
 
 export default ApiMap;
