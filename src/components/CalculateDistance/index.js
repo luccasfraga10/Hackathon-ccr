@@ -1,17 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import getDistances from '../../services/test';
+import getApiDistance from '../../services/distance';
 
-const CalculateDistance = () => {
+const CalculateDistance = ({ coordinates }) => {
+  const [distance, setDistance] = useState([]);
+
   const getDistanceRoute = async () => {
-    const init = { lat: -23.4814376, long: -46.7458937 };
-    const end = { lat: -23.5353856, long: -46.8979554 };
+    const init = {
+      lat: coordinates[0].latitude,
+      long: coordinates[0].longitude,
+    };
+    const end = {
+      lat: coordinates[1].latitude,
+      long: coordinates[1].longitude,
+    };
 
     try {
-      const response = await getDistances(init, end);
-      console.log('Deu bom', response);
+      const headers = {
+        'x-rapidapi-host': 'trueway-matrix.p.rapidapi.com',
+        'x-rapidapi-key': 'f63dfed683msh26a3583d88a159dp1b2016jsnd5d25619ace9',
+        'content-type': 'application/json',
+        useQueryString: true,
+      };
+
+      const response = await getApiDistance.get(
+        `CalculateDrivingMatrix?destinations=${init.lat},${init.long}&origins=${end.lat},${end.long}`,
+        { headers }
+      );
+
+      setDistance(response.data);
     } catch (err) {
-      console.log('erro =>', err);
+      console.log('Err =>', err);
     }
   };
 
@@ -21,7 +40,12 @@ const CalculateDistance = () => {
 
   return (
     <div>
-      <h1>s</h1>
+      <p>
+        Distância:<b>{distance.distances}</b>
+      </p>
+      <p>
+        Tempo:<b>{distance.durations}</b>
+      </p>
     </div>
   );
 };
