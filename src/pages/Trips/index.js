@@ -109,7 +109,9 @@ const Trips = () => {
               }
             </TabPanel>
             <TabPanel value={value} index={1}>
-              Item Two
+              {
+                trips.map((trip, index) => <TripBox classes={classes} key={index} {...trip} />)
+              }
             </TabPanel>
           </>
         )
