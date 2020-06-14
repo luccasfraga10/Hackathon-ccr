@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React, { useEffect } from 'react';
-import Header from '../../components/Header';
 
 import api from '../../services/api';
 
@@ -16,7 +15,6 @@ const PageHome = () => {
 
   return (
     <>
-      <Header />
       <p>olá</p>
     </>
   );
