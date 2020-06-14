@@ -1,13 +1,14 @@
 import React from 'react';
-import { Box, Grid, Paper, Typography, Avatar } from '@material-ui/core';
+import { Box, Grid, Paper, Typography, Avatar, SvgIcon } from '@material-ui/core';
 import truckIcon from '../../assets/icons/shipment-truck.svg'
 import monitorIcon from '../../assets/icons/monitor-heart.svg'
 import shopIcon from '../../assets/icons/shop-street.svg'
 import pointsIcon from '../../assets/icons/points.svg'
 import notificationIcon from '../../assets/icons/notification.svg'
+import mapPointIcon from '../../assets/icons/map-point.svg'
 import { Link } from 'react-router-dom'
 import colors from '../../utils/colors'
-
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import useStyles from './styles'
 
 const menu = [
@@ -37,9 +38,9 @@ const PageHome = () => {
   const classes = useStyles()
   return (
     <Box p={3}>
-      <Box mb={1}><img src={notificationIcon} aria-hidden="true" alt="" /></Box>
+      <Box mb={2}><img src={notificationIcon} aria-hidden="true" alt="" /></Box>
       <Box component={Typography} color={colors.grayLight} variant="caption">Bem vindo</Box>
-      <Box display="flex" mb={3} justifyContent="space-between">
+      <Box display="flex" mb={4} justifyContent="space-between">
         <Typography className={classes.fullName}>Marcos Felipe</Typography>
         <Avatar className={classes.avatar}>MF</Avatar>
       </Box>
@@ -59,6 +60,15 @@ const PageHome = () => {
           })
         }
       </Grid>
+
+      <Box className={classes.bottomInfo}>
+        <img src={mapPointIcon} className={classes.mapIcon} alt="" aria-hidden="true" />
+        <Typography variant="subtitle2">Criar agendamento de viagem</Typography>
+        <Typography className={classes.bottomInfoDescription}>Organize suas viagens e ganhe pontos</Typography>
+        <Link to="/" className={classes.createTrip}>
+          Criar agendamento <SvgIcon className={classes.createTripIcon} component={ArrowForwardIosIcon} />
+        </Link>
+      </Box>
     </Box>
   );
 };

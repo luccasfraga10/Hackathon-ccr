@@ -9,6 +9,9 @@ const defaultTheme = createMuiTheme({
       main: colors.primary,
     },
   },
+  typography: {
+    fontFamily
+  }
 });
 
 defaultTheme.overrides = {
@@ -52,6 +55,14 @@ defaultTheme.overrides = {
     overline: {
       fontFamily
     },
+    subtitle1: {
+      fontFamily,
+      fontSize: 18,
+    },
+    subtitle2: {
+      fontFamily,
+      fontSize: 18,
+    }
   }
 };
 
