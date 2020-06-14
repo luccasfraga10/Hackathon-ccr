@@ -1,4 +1,5 @@
 /* eslint-disable */
+import './index.css'
 import React from 'react';
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -63,12 +64,9 @@ class SearchBar extends React.Component {
       longitude: null,
     });
 
-    const newArray = [
-      this.props.valueDistance &&
-        this.props.valueDistance.find(item => item.id !== this.props.id),
-    ];
+    const valDistance = this.props.valueDistance.find(item => item.id !== this.props.id);
 
-    this.props.setDistance(newArray);
+    this.props.setDistance(valDistance ? [valDistance]: []);
   };
 
   handleError = (status, clearSuggestions) => {
@@ -88,7 +86,7 @@ class SearchBar extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <>
         <PlacesAutocomplete
           onChange={this.handleChange}
           value={address}
@@ -102,7 +100,7 @@ class SearchBar extends React.Component {
                 <div className="Demo__search-input-container">
                   <input
                     {...getInputProps({
-                      placeholder: 'Digite o endereço',
+                      placeholder: this.props.text,
                       className: 'Demo__search-input',
                     })}
                   />
@@ -146,7 +144,7 @@ class SearchBar extends React.Component {
         {errorMessage.length > 0 && (
           <div className="Demo__error-message">{this.state.errorMessage}</div>
         )}
-      </div>
+      </>
     );
   }
 }
