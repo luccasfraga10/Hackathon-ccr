@@ -14,7 +14,7 @@ export default function DateAndTimePickers() {
   const handleNext = () => {
     localStorage.setItem('date', date);
     localStorage.setItem('time', time);
-    history.push('/')
+    history.push('/successful-scheduling');
   };
 
   const handleChange = (e) => {

@@ -30,6 +30,26 @@ class SearchBar extends React.Component {
 
   handleSelect = selected => {
     this.setState({ isGeocoding: true, address: selected });
+
+
+
+    const info = localStorage.getItem('info');
+
+    if (info) {
+      const a = JSON.parse(info);
+      const b = a.map(item => item);
+      const array = [b[0], selected]
+
+      localStorage.setItem('info', JSON.stringify(array));
+    } else {
+      const array = [selected];
+      localStorage.setItem('info', JSON.stringify(array))
+    }
+
+
+
+
+
     geocodeByAddress(selected)
       .then(res => getLatLng(res[0]))
       .then(({ lat, lng }) => {
@@ -49,6 +69,7 @@ class SearchBar extends React.Component {
           },
         ];
 
+
         this.props.setDistance(newArray);
       })
       .catch(error => {
@@ -65,6 +86,30 @@ class SearchBar extends React.Component {
     });
 
     const valDistance = this.props.valueDistance.find(item => item.id !== this.props.id);
+
+
+
+    const info = localStorage.getItem('info');
+
+    if (info) {
+      const info1 = JSON.parse(info);
+
+      if (info1.length === 1) {
+        localStorage.removeItem('info');
+      }
+
+      if (this.props.id === 1 && info1.length > 1) {
+        const newText = info1[1];
+        const newInfoArray1 = [newText];
+        localStorage.setItem('info', JSON.stringify(newInfoArray1));
+      }
+
+      if (this.props.id === 2 && info1.length > 1) {
+        const newText2 = info1[0];
+        const newInfoArray2 = [newText2];
+        localStorage.setItem('info', JSON.stringify(newInfoArray2));
+      }
+    }
 
     this.props.setDistance(valDistance ? [valDistance]: []);
   };

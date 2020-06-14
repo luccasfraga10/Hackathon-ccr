@@ -12,7 +12,6 @@ const Header = ({ onNext }) => {
 
   const handleNext = () => {
     onNext();
-    localStorage.setItem('distance', JSON.stringify(distance));
   }
 
   return (
