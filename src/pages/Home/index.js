@@ -143,7 +143,7 @@ const PageHome = () => {
             </Box>
           </Box>
 
-          <Button component={nextRoute} variant="outlined" fullWidth>Continuar</Button>
+          <Button component={nextRoute} color="primary" variant="outlined" fullWidth>Continuar</Button>
         </Box>
       </Dialog>
     </Box>
