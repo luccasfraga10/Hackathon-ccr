@@ -13,6 +13,14 @@ export default makeStyles(theme => ({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+  },
+  tabs: {
+    position: "sticky",
+    top: 0,
+    background: colors.white
+  },
+  button: {
+    boxShadow: '0 24px 34px rgba(#0063F5, 22%)'
   }
 }))
 

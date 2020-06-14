@@ -8,13 +8,16 @@ import {
   Typography,
   SvgIcon,
   CircularProgress,
-  useTheme
+  useTheme,
+  Button,
 } from '@material-ui/core';
-
+import { Link } from 'react-router-dom'
 import RoomIcon from '@material-ui/icons/Room';
 import api from '../../services/api'
 import useStyles from './styles'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+import colors from '../../utils/colors'
 
 const TabPanel = props => {
   const { children, value, index, ...other } = props;
@@ -45,11 +48,11 @@ const TripBox = ({ destiny, date, distance, time, points, classes }) => {
       <Box overflow="hidden">
         <Typography className={classes.destiny} component="p">{destiny}</Typography>
         <Typography component="div" className={classes.infosTrip}>
-          {time} - {date} {distance}km
+          {time} - {date} - {distance}km
         </Typography>
         <Box component={Typography} color={theme.palette.success.main}> <b>{points}Pts</b></Box>
       </Box>
-      <Box ml={1}><SvgIcon component={ArrowForwardIosIcon} /></Box>
+      <Box ml={1}><SvgIcon fontSize="16px" component={ArrowForwardIosIcon} /></Box>
     </Box>
   )
 }
@@ -84,9 +87,13 @@ const Trips = () => {
 
   return (
     <div>
+      <Box p={4} mb={2} bgcolor={colors.white} component="header"position="relative">
+        <Box position="absolute" component={Link} to="/" left={32} top={32}><SvgIcon component={ArrowBackIosIcon} /></Box>
+        <Typography align="center">Viagens</Typography>
+      </Box>
       {
         loading ? (
-          <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
+          <Box display="flex" mt="-60px" justifyContent="center" alignItems="center" height="100vh">
             <CircularProgress />
           </Box>
         ) : (
@@ -97,6 +104,7 @@ const Trips = () => {
               indicatorColor="primary"
               textColor="primary"
               variant="fullWidth"
+              className={classes.tabs}
               aria-label="full width tabs example"
             >
               <Tab label="Viagens agendadas" />
@@ -116,6 +124,10 @@ const Trips = () => {
           </>
         )
       }
+
+      <Box position= "fixed" bottom="30px" left="0" width="100%" maxWidth="375px" display="flex" justifyContent="center">
+        <Button className={classes.button} variant="contained" color="primary">Criar agendamento de viagem</Button>
+      </Box>
     </div>
   )
 }
