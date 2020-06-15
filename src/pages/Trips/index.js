@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 import {
   Tabs,
   Tab,
@@ -13,11 +12,11 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 import RoomIcon from '@material-ui/icons/Room';
-import api from '../../services/api'
 import useStyles from './styles'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import colors from '../../utils/colors'
+import listTrips from './trips'
 
 const TabPanel = props => {
   const { children, value, index, ...other } = props;
@@ -58,7 +57,6 @@ const TripBox = ({ destiny, date, distance, time, points, classes }) => {
 
 const Trips = () => {
   const [value, setValue] = useState(0);
-  const [trips, setTrips] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const classes = useStyles()
@@ -67,19 +65,9 @@ const Trips = () => {
     setValue(newValue);
   };
 
-  const getAllTrips = async () => {
-    try {
-      const { data } = await api.get('trips')
-      setTrips(data)
-      setLoading(false)
-    } catch(error) {
-      console.error(error)
-    }
-  }
-
   useEffect(() => {
     setTimeout(() => {
-      getAllTrips()
+      setLoading(false)
     }, 600)
   }, [])
 
@@ -112,12 +100,12 @@ const Trips = () => {
 
             <TabPanel value={value} index={0}>
               {
-                trips.map((trip, index) => <TripBox classes={classes} key={index} {...trip} />)
+                listTrips.map((trip, index) => <TripBox classes={classes} key={index} {...trip} />)
               }
             </TabPanel>
             <TabPanel value={value} index={1}>
               {
-                trips.map((trip, index) => <TripBox classes={classes} key={index} {...trip} />)
+                listTrips.map((trip, index) => <TripBox classes={classes} key={index} {...trip} />)
               }
             </TabPanel>
           </>
