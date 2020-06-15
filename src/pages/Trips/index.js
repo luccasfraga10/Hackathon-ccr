@@ -116,7 +116,7 @@ const Trips = () => {
         )
       }
 
-      <Box position= "fixed" bottom="30px" left="0" width="100%" maxWidth="375px" display="flex" justifyContent="center">
+      <Box className={classes.fixed} position="fixed" bottom="30px" left="0" width="100%" maxWidth="375px" display="flex" justifyContent="center">
         <Button onClick={handleNext} className={classes.button} variant="contained" color="primary">Criar agendamento de viagem</Button>
       </Box>
     </div>

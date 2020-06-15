@@ -21,6 +21,10 @@ export default makeStyles(theme => ({
   },
   button: {
     boxShadow: '0 24px 34px rgba(#0063F5, 22%)'
+  },
+  fixed: {
+    left: '50%',
+    transform: 'translateX(-50%)',
   }
 }))
 
