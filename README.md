@@ -8,6 +8,11 @@ Gerar ideias voltadas para a rotina dos caminhoneiros, encontrando soluções pa
 
 ## Visualização:
 
+![](src/assets/1.png)
+![](src/assets/2.png)
+![](src/assets/3.png)
+![](src/assets/4.png)
+
 ## Scripts disponíveis
 No diretório do projeto, você deve executar:
 
