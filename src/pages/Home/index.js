@@ -36,7 +36,7 @@ const menu = [
   {
     label: 'Viagens',
     icon: truckIcon,
-    path: '/',
+    path: '/trips',
   },
   {
     label: 'Parceiros',

@@ -40,7 +40,6 @@ const TabPanel = props => {
 }
 
 const TripBox = ({ destiny, date, distance, time, points, classes }) => {
-  console.log('time', time)
   const theme = useTheme()
   return (
     <Box p={2} mb={2} elevation="0" component={Paper} display="flex" alignItems="center">
