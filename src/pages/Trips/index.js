@@ -17,6 +17,7 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import colors from '../../utils/colors'
 import listTrips from './trips'
+import history from '../../services/history';
 
 const TabPanel = props => {
   const { children, value, index, ...other } = props;
@@ -71,6 +72,9 @@ const Trips = () => {
     }, 600)
   }, [])
 
+  const handleNext = () => {
+    history.push('/trip');
+  };
 
   return (
     <div>
@@ -113,7 +117,7 @@ const Trips = () => {
       }
 
       <Box position= "fixed" bottom="30px" left="0" width="100%" maxWidth="375px" display="flex" justifyContent="center">
-        <Button className={classes.button} variant="contained" color="primary">Criar agendamento de viagem</Button>
+        <Button onClick={handleNext} className={classes.button} variant="contained" color="primary">Criar agendamento de viagem</Button>
       </Box>
     </div>
   )
